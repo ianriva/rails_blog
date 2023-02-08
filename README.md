@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Initial configuration
 
-Things you may want to cover:
+Run `bundle install` to install dependencies
 
-* Ruby version
+In the root directory make a `.env` file and use the variables 
+described in the `.env_default` file
 
-* System dependencies
+Run `docker compose up -d` to start the database container (this assumes that
+you hace docker installed)
 
-* Configuration
+You can get the postgres host with `docker ps` and using the container id
+to inspect the container: `docker inspect CONTAINER_ID`  
+Add the postgres host id to the .env file
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Finally run `rails s` to start the server
