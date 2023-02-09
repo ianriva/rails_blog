@@ -1,0 +1,5 @@
+<%= form_with(url: rate_post_path) do |form| %>
+  <%= form.select :score, options_for_select((1..5).map { |v| ["#{v}/5", v] }), { prompt: "Please select a number" }, { class: "form-control w-auto", required: true } %>
+  <%= form.hidden_field :post_id, value: @post.id, class: "form-control" %>
+  <%= form.submit "Rate", class: "btn btn-primary my-3" %>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post "post_reviews/rate", to: "post_reviews#rate", as: "rate_post"
   resources :posts
   resources :comments, only: [:create, :destroy]
   devise_for :users

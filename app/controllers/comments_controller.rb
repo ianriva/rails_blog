@@ -12,11 +12,13 @@ class CommentsController < ApplicationController
         })
         respond_to do |format|
             if @comment.save
-            format.html { redirect_to @comment.post, notice: "Comment was successfully created." }
-            format.json { render :show, status: :created, location: @comment }
+              format.html { redirect_to @comment.post, notice: "Comment was successfully created." }
+              format.json { render :show, status: :created, location: @comment }
             else
-            format.html { render :new, status: :unprocessable_entity }
-            format.json { render json: @comment.errors, status: :unprocessable_entity }
+              post = Post.find(params["post_id"])
+              flash[:alert] = "Can't save comment"
+              format.html { render post, status: :unprocessable_entity }
+              format.json { render json: @comment.errors, status: :unprocessable_entity }
             end
         end
     end
