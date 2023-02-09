@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /posts/new
@@ -23,12 +24,9 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    #unless params["user_id"].to_i == current_user.id
-    #  redirect_to posts_path, alert: "You can't create posts for another user!"
-    #end
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }

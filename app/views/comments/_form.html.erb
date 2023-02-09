@@ -1,0 +1,5 @@
+<%= form_with(url: comments_path) do |form| %>
+  <%= form.text_area :body, class: "form-control" %>
+  <%= form.hidden_field :post_id, value: @post.id, class: "form-control" %>
+  <%= form.submit "Comment", class: "btn btn-primary my-3" %>
+<% end %>
