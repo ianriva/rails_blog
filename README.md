@@ -15,3 +15,16 @@ to inspect the container: `docker inspect CONTAINER_ID`
 Add the postgres host id to the .env file
 
 Finally run `rails s` to start the server
+
+## Set up database
+
+```
+rails db:create
+rails db:migrate
+```
+
+## TODO
+
+- Add name to log in / sign in
+- Replace bootstrap cdn with gem
+- Fix [devise issue](https://github.com/heartcombo/devise/issues/5439), check if error persists

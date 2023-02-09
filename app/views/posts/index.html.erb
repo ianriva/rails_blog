@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-between align-items-center">
+<h1>Posts</h1>
+<% if user_signed_in? %>
+  <%= link_to "New post", new_post_path, class: "btn btn-primary btn-lg my-3" %>
+<% end %>
+</div>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <h2>
+      <%= link_to post.title, post %>
+    </h2>
+    <p>
+      <%= post.short_description %>
+    </p>
+    <small>
+      <%= post.user.email %>
+    </small>
+
+    <p>
+      
+    </p>
+    <hr>
+  <% end %>
+</div>
