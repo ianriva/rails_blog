@@ -6,6 +6,7 @@ ruby "3.2.0"
 gem "devise"
 gem "dotenv-rails"
 gem 'will_paginate', '~> 3.3.0'
+gem 'ransack'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"

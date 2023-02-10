@@ -13,4 +13,12 @@ class Post < ApplicationRecord
       0
     end
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["comments", "post_reviews", "user"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["content", "created_at", "id", "short_description", "title", "updated_at", "user_id"]
+  end
 end
