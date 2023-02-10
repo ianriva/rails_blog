@@ -28,3 +28,4 @@ rails db:migrate
 - Add name to log in / sign in
 - Replace bootstrap cdn with gem
 - Fix [devise issue](https://github.com/heartcombo/devise/issues/5439), check if error persists
+- Add tests
